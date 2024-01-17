@@ -20,6 +20,36 @@
 
         let amountOfWood = 0;
         let horses = 0;
+
+        document.addEventListener("keydown", function(event){
+            if (event.key == "c"){
+                amountOfWood += 10;
+                updateCurrency();
+            }
+
+        })
+
+        horse.addEventListener("click", buyHorse)
+
+        function buyHorse() {
+            if (amountOfWood >= 100) {
+                amountOfWood -= 100;
+                horses++;
+                updateCurrency();
+
+
+            }else{
+                alert("Du har ikke nok tre!");
+            }
+        }
+
+        function updateCurrency() {
+
+            woodTxt.innerHTML = `Antall tre ${amountOfWood}`;
+            horseTxt.innerHTML = `Antall hester ${horses}`;
+
+
+        }
     </script>
 </body>
 
